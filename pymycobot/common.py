@@ -141,6 +141,9 @@ class ProtocolCode(object):
     SET_JOINT_CURRENT = 0x90
     GET_JOINT_CURRENT = 0x91
     SET_CURRENT_STATE = 0x92
+    # Custon gripper
+    CUSTOM_GRIPPER_CLOSE = 0x98
+    CUSTOM_GRIPPER_OPEN = 0x99
 
     # planning speed
     GET_PLAN_SPEED = 0xD0

@@ -110,6 +110,8 @@ class MyArm(MyCobotCommandGenerator):
                 ProtocolCode.GET_REFERENCE_FRAME,
                 ProtocolCode.GET_FRESH_MODE,
                 ProtocolCode.GET_GRIPPER_MODE,
+                ProtocolCode.CUSTOM_GRIPPER_CLOSE,
+                ProtocolCode.CUSTOM_GRIPPER_OPEN,
                 ProtocolCode.SET_SSID_PWD
             ]:
                 return self._process_single(res)

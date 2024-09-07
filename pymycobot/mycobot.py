@@ -110,6 +110,8 @@ class MyCobot(MyCobotCommandGenerator):
                 ProtocolCode.GET_REFERENCE_FRAME,
                 ProtocolCode.GET_FRESH_MODE,
                 ProtocolCode.GET_GRIPPER_MODE,
+                ProtocolCode.CUSTOM_GRIPPER_CLOSE,
+                ProtocolCode.CUSTOM_GRIPPER_OPEN,
                 ProtocolCode.GET_ERROR_INFO
             ]:
                 return self._process_single(res)
@@ -134,7 +136,20 @@ class MyCobot(MyCobotCommandGenerator):
             else:
                 return res
         return None
+    def close_custom_gripper(self, angle_req):
+        """ Close the custom gripper.
 
+        Return:
+            (int) .
+        """
+        return self._mesg(ProtocolCode.CUSTOM_GRIPPER_CLOSE, angle_req, has_reply=False)
+    def open_custom_gripper(self, angle_req):
+        """ Open the custom gripper.
+
+        Return:
+            (int) .
+        """
+        return self._mesg(ProtocolCode.CUSTOM_GRIPPER_OPEN, angle_req, has_reply=False)
     def get_radians(self):
         """Get the radians of all joints
 

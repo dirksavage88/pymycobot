@@ -78,6 +78,7 @@ class MyCobotCommandGenerator(DataProcessor):
             set_gripper_ini()
             is_gripper_moving()
 
+
         # Basic
             set_basic_output()
             get_basic_input()
@@ -767,6 +768,20 @@ class MyCobotCommandGenerator(DataProcessor):
         """
         return self._mesg(ProtocolCode.GET_TOF_DISTANCE, has_reply=True)
     
+    def close_custom_gripper(self, angle_req):
+        """ Close the custom gripper.
+
+        Return:
+            (int) .
+        """
+        return self._mesg(ProtocolCode.CUSTOM_GRIPPER_CLOSE, angle_req, has_reply=False)
+    def open_custom_gripper(self, angle_req):
+        """ Open the custom gripper.
+
+        Return:
+            (int) .
+        """
+        return self._mesg(ProtocolCode.CUSTOM_GRIPPER_OPEN, angle_req, has_reply=False)
     def set_tool_reference(self, coords):
         """Set tool coordinate system
         

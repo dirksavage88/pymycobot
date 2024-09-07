@@ -765,6 +765,20 @@ class MyBuddyCommandGenerator(MyCobotCommandGenerator):
         """
         return self._mesg(ProtocolCode.IS_GRIPPER_MOVING, id, has_reply=True)
 
+    def close_custom_gripper(self, angle_req):
+        """ Close the custom gripper.
+
+        Return:
+            (int) .
+        """
+        return self._mesg(ProtocolCode.CUSTOM_GRIPPER_CLOSE, angle_req, has_reply=False)
+    def open_custom_gripper(self, angle_req):
+        """ Open the custom gripper.
+
+        Return:
+            (int) .
+        """
+        return self._mesg(ProtocolCode.CUSTOM_GRIPPER_OPEN, angle_req, has_reply=False)
     def set_tool_color(self, id, r=0, g=0, b=0):
         """Set the light color on the top of the robot arm.
 
